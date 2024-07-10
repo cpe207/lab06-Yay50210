@@ -5,7 +5,7 @@ import axios from "axios";
 const getTodo = async (todoId: number) => {
   /* Your code here */
 
-   try{
+  try{
 
     const result = await axios.get(`https://jsonplaceholder.typicode.com/todos/${todoId}`);
     const results = await axios.get(`https://jsonplaceholder.typicode.com//users/${result.data.userId}`);
@@ -19,9 +19,14 @@ const getTodo = async (todoId: number) => {
 
   }catch(err){
 
-    return "INVALID TODO ID";
+    setTimeout(()=>{
+      console.log( "INVALID TODO ID");
+    },2000)
+    
 
   }
+
+
 };
 
 //test case
